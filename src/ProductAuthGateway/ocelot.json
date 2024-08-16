@@ -2,11 +2,11 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/product/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5227
+          "Port": 7063
         }
       ],
       "UpstreamPathTemplate": "/api/Product/{everything}",
@@ -14,11 +14,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/auth/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5114
+          "Port": 7015
         }
       ],
       "UpstreamPathTemplate": "/api/Auth/{everything}",
@@ -28,21 +28,23 @@
   "SwaggerEndPoints": [
     {
       "Key": "ProductApi",
+      "TransformByOcelotConfig": true,
       "Config": [
         {
           "Name": "Product API",
           "Version": "v1",
-          "Url": "http://localhost:5227/swagger/v1/swagger.json"
+          "Url": "https://localhost:7063/swagger/v1/swagger.json"
         }
       ]
     },
     {
       "Key": "AuthApi",
+      "TransformByOcelotConfig": true,
       "Config": [
         {
           "Name": "Auth API",
           "Version": "v1",
-          "Url": "http://localhost:5114/swagger/v1/swagger.json"
+          "Url": "https://localhost:7015/swagger/v1/swagger.json"
         }
       ]
     }
