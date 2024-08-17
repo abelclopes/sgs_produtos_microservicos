@@ -10,7 +10,14 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Product/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "Priority": 0,
+      "RouteIsCaseSensitive": false,
+      "SwaggerKey": "ProductApi",
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": [ "scope" ]
+      //}
     },
     {
       "DownstreamPathTemplate": "/api/auth/{everything}",
@@ -22,13 +29,19 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Auth/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "Priority": 0,
+      "RouteIsCaseSensitive": false,
+      "SwaggerKey": "AuthApi",
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": [ "scope" ]
+      //}
     }
   ],
   "SwaggerEndPoints": [
     {
       "Key": "ProductApi",
-      "TransformByOcelotConfig": true,
       "Config": [
         {
           "Name": "Product API",
@@ -39,7 +52,6 @@
     },
     {
       "Key": "AuthApi",
-      "TransformByOcelotConfig": true,
       "Config": [
         {
           "Name": "Auth API",

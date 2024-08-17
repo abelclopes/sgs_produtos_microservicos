@@ -1,29 +1,24 @@
-using Swashbuckle.AspNetCore.SwaggerGen;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
-using MMLib.SwaggerForOcelot.DependencyInjection;
-using MMLib.SwaggerForOcelot.Middleware;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOcelot();
 builder.Services.AddSwaggerForOcelot(builder.Configuration);
 
-builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+builder.Configuration.AddJsonFile("ocelot.json");
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.UseSwaggerForOcelotUI(option =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    option.PathToSwaggerGenerator = "/swagger/docs";
+});
+app.MapControllers();
 
-app.UseSwaggerForOcelotUI(options =>
-{
-    options.PathToSwaggerGenerator = "/swagger/docs";
-}).UseOcelot().Wait();
-
-app.Run();
+await app.UseOcelot();
+await app.RunAsync();
