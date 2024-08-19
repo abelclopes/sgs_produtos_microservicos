@@ -3,7 +3,6 @@
 
 Para gerar um `README.md` adequado para o repositório `abelclopes/sgs_produtos_microservicos`, aqui está um exemplo de estrutura que você pode seguir:
 
-```markdown
 # SGS Produtos Microserviços
 
 Este repositório contém a implementação de microserviços para o sistema de gerenciamento de produtos SGS.
@@ -75,6 +74,6 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou um 
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
-```
+
 
 Esse modelo pode ser personalizado conforme as necessidades específicas do seu projeto. Se precisar de mais informações ou ajustes, estou à disposição para ajudar!
