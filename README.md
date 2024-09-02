@@ -11,7 +11,7 @@ Este repositório contém a implementação de microserviços para o sistema de 
 
 - .NET Core 8.0
 - Docker
-- Kubernetes
+- Kubernetes (FEATURE)
 - GitHub Actions para CI/CD
 
 ## Estrutura do Projeto
